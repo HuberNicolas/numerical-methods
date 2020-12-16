@@ -12,7 +12,5 @@ function [x,y,z] = nameOftheFunction(a,b,c)
 %           z        : a return Value
 
 
-% Add code here of the function
-% Code
-% Code
+% Add code here of the function you want to create
   
