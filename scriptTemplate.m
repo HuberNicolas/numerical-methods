@@ -2,6 +2,7 @@
 %{
     Nicolas Huber
     16-936-205
+    BA Information Systems @ UZH, Switzerland
 %}
 %% About
 %{
