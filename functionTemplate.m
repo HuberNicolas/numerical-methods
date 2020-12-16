@@ -13,4 +13,6 @@ function [x,y,z] = nameOftheFunction(a,b,c)
 
 
 % Add code here of the function
+% Code
+% Code
   
