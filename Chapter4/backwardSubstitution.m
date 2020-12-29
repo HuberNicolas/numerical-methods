@@ -25,4 +25,4 @@ end
 
 %% Notes
 % b(1:j-1) : all values of b above the actual calculated
-% b(j) : the actual calculated x value * U(1:j-1,j) : the entry in matrix u
+% b(j) : the actual calculated x value * U(1:j-1,j) : the entry in matrix U
