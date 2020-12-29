@@ -1,6 +1,6 @@
 function [A] = gaussLUFactorisation(A)
 %   Computes the LU-Factorisation of A and stores them in A
-%   (column oriented, overwrites A) 
+%   (column oriented, overwrites A, without pivoting) 
 %   
 %   A = LU in which
 %   L : lower triangular matrix (diagonal entries of L := 1)
@@ -30,5 +30,4 @@ function [A] = gaussLUFactorisation(A)
             A(i,j) = A(i,j)/A(j,j);
         end
     end
-    
 end
