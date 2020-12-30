@@ -16,7 +16,7 @@ function [x,it] = secantMethod(fun, x0,xm1, itMax, eps)
     % check, we might are lucky
     xvect(1) = xm1;
     xvect(2) = x0;
-    it = 2;
+    it = 2
     %% Procedure
     while true
         xvect(it+1) = xvect(it)-fun(xvect(it))*((xvect(it)-xvect(it-1))/(fun(xvect(it))-fun(xvect(it-1))));
@@ -27,6 +27,6 @@ function [x,it] = secantMethod(fun, x0,xm1, itMax, eps)
         end
         it = it+1;
     end
-    it = it - 2;
+    it = it - 2; % 
     x = xvect(end);
 end
