@@ -18,7 +18,7 @@ f = @(x) x^3-3.*x^2-x+3;
 xa = -0.5;
 xb = 2.8;
 itMax = 1000;
-tolerance = 5*10^(-10);
+tolerance = 5e-10;
 
 %% Computation
 [m,it] = bisectionMethod(f,xa,xb,itMax,tolerance);
