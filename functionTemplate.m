@@ -11,6 +11,8 @@ function [x,y,z] = nameOftheFunction(a,b,c)
 %           y        : a return Value
 %           z        : a return Value
 
-
 % Add code here of the function you want to create
-  
+
+
+
+end  
