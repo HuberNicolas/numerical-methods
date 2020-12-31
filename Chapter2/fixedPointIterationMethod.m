@@ -1,5 +1,5 @@
 function [x,it] = fixedPointIterationMethod(fun, phi, x0, itMax, eps)
-%   Implementation of the bisection Method to find roots
+%   Implementation of the fixed point iteration to find roots
 %   
 %   Input:
 %           fun          : function that we want to find a root
