@@ -1,10 +1,9 @@
 function [x,it] = secantMethod(fun, x0,xm1, itMax, eps)
 %   Implementation of the secant Method to find roots
-%   The derivation of f is approximated with secants   
-%
+%   
 %   Input:
 %           fun          : function that we want to find a root
-%           x0           : x0 point to make the inital secant
+%           x0           : x0 point to make secant
 %           xm1          : x-1 point to make the initial secant
 %           itMax        : maximal number of iterations
 %           eps          : |x^(k+1) - x(k)| stopping criterion
