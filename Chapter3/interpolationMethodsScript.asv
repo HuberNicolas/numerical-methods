@@ -6,22 +6,23 @@
 %}
 %% About
 %{
-    
+    Skript to investiagte the lagrangian 
 %}
 
 %% Clearing Workspace
 clc; clear all; close all;
 
 %% Initialisation
-x = [-1;0;1;3]
-y = [1;3;-7;3]
+x = [-1;0;1;3];
+y = [1;3;-7;3];
+% number check: https://www.youtube.com/watch?v=9P3s0ULxxa0
 
 % values from lecture
 %x = [-9;-4;-1;7]
 %y = [5;2;-2;9]
 
 %xeval = [1;2;3;4]
-xeval =
+xeval = [1;2;3;4];
 lagrangianInterpolation(x,y,xeval)
 
 %% Computation

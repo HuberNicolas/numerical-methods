@@ -1,5 +1,6 @@
 function [y_eval] = lagrangianInterpolation(x,y,xeval)
-%   Description of the function
+%   Lagrangian interpolation method to compute y values for a given set
+%   x for a interpolated function given by a dataset
 %   
 %   Input:
 %           x        : x values of the dataset
@@ -20,7 +21,7 @@ function [y_eval] = lagrangianInterpolation(x,y,xeval)
     
     %% Initialisation
     n = szy; % number of datapoints
-    sz = size(xeval) % number of points that need to be evaluated
+    sz = size(xeval); % number of points that need to be evaluated
     
     %% Computation
     for m = 1:sz(1) % compute every new y value for the provided x values
