@@ -1,4 +1,4 @@
-function [fun] = lagrangianInterpolation(x,y)
+function [fun] = monomialInterpolation(x,y)
 %   Description of the function
 %   
 %   Input:
@@ -9,28 +9,15 @@ function [fun] = lagrangianInterpolation(x,y)
 %           x        : a return Value
 %           y        : a return Value
 %           z        : a return Value
-    
-    %% Initialisation
+
+% Add code here of the function you want to create
+
+%% Initialisation
     szx = size(x)
     szy = size(y)
     if szx(1) ~= szy(1)
         disp("invalid set of datapoints");
         return
     end
-    n = szx(1)-1;
-    L=ones(szx(1),szx(1));
-    %% Computation
-    for k=0:n % k-th lagrangian base function
-        L(:,1)= y(k+1,:)';
-        for j=0:n
-            if j ~= k
-                disp(j); % works
-                L = L
-            end
-        end
-        
-    end
-   
-
 
 end  
