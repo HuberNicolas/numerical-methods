@@ -1,4 +1,4 @@
-function [S] = quadraticSplineInterpolation(x,y)
+function [S] = quadraticSplineInterpolation2(x,y)
 %   Piecewise polynomial interpolation method (quadratic splines) (page 9)
 %   
 %   Input:
@@ -7,7 +7,7 @@ function [S] = quadraticSplineInterpolation(x,y)
 %
 %   Output:
 %           S        : matrix, that contains the coefficients for the si
-%                      polynoms
+%                      polynoms (x form)
     
     %% Sanity check of  the dataset
     szx = size(x); % number of x entries of the dataset
@@ -30,10 +30,10 @@ function [S] = quadraticSplineInterpolation(x,y)
     D1 = diag(h,-1); % sub diagonal
     D1 = D1(:,1:end-1); % delete last column
     D1 = D1(1:end-1,:); % delete last row
-    H = H + D1
+    H = H + D1;
     
     % create a, x^0 coeff
-    a = y(1:end-1) % delete last row
+    a = y(1:end-1); % delete last row
     
     % create c, x^2 coeff
     c(1) = 0; % c0 = 0
@@ -50,14 +50,22 @@ function [S] = quadraticSplineInterpolation(x,y)
         b = [b;bj]; 
     end
     %b = b
-    
-    S = [c b a]
-    %pp = mkpp(x,S)
-    %xq = 0:0.01:15;
-    %plot(xq,ppval(pp,xq))
-    pp = mkpp(x,S);
-    xq = x(1):0.01:x(end);   
-    plot(xq,ppval(pp,xq),x,y,'X');
+    S = [c b a];
+
+    %% Transform the coefficients
+    a_conv = []; b_conv = []; c_conv = [];
+    % Transform from (x-xi) to x
+    for j=1:n
+        aj_conv = a(j) - b(j).*x(j) + c(j).*x(j).^2; % x(j) is negativ (x-xi)
+        a_conv = [a_conv;aj_conv];
+        
+        bj_conv = b(j) - 2*x(j)*c(j); % x(j) is negativ (x-xi)
+        b_conv = [b_conv;bj_conv];
+        cj_conv =  c(j);
+        
+        c_conv = [c_conv;cj_conv];
+    end
+    S = [c_conv b_conv a_conv];
 end  
 
     

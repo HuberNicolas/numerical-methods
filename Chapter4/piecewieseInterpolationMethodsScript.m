@@ -7,7 +7,9 @@
 %% About
 %{
     Skript to investiagte the piecewiese interpolation method.
-    (linear )
+    (polynomial, spline (quadratic))
+    TO-DO:  - Piecewise constant interpolation
+            - spline (qubic)
 %}
 
 %% Clearing Workspace
@@ -22,8 +24,14 @@ xevalQuick = [3;5;6;7;9]; % where to evaualte for interp1q
 
 
 %% Computation
+% linear piecewise interpolation
 yevall = linearPiecewiseInterpolation(x,y,xeval);
 yeval2 = interp1(x,y,xeval); % integrated Matlab solution
 yeval3 = interp1q(x,y,xevalQuick); % integrated Matlab solution, faster
-S = quadraticSplineInterpolation(x,y);
+
+% quadratic Spline interpolation
+S1 = quadraticSplineInterpolation(x,y);
+S2 = quadraticSplineInterpolation2(x,y);
+%yeval5 = quadraticSplineInterpolationQuarteroni(x,y,xeval) % Copyright by QUARTERONI
+
 %% Plotting
