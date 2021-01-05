@@ -34,4 +34,10 @@ S1 = quadraticSplineInterpolation(x,y);
 S2 = quadraticSplineInterpolation2(x,y);
 %yeval5 = quadraticSplineInterpolationQuarteroni(x,y,xeval) % Copyright by QUARTERONI
 
+% qubic Spline interpolation
+zsp = [x(1):0.01:x(end)];
+s = spline(x,y,zsp);
+plot(x,y,'o',zsp,s)
+
+
 %% Plotting
