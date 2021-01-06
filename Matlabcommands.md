@@ -104,4 +104,17 @@ plot(xsp,ysp,'o',zsp,s)
 
 
 Evaluate the polynomial p at each point in x
-y = polyval(p,x) 
+y = polyval(p,x)
+
+LU
+
+[L,U,P]=lu(A) % does always permutation by rows,
+[L,U]=lu(A) %L is actually PL,
+[L,U,P,Q]=lu(A) %does total pivoting
+
+
+Put diag togheter
+D = 2.04 .* ones(n,1); % main diag
+D1 = (-1).* ones(n-1,1); % sub diag
+A = diag(D)+diag(D1,-1)+diag(D1,+1);
+

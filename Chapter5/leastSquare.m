@@ -12,10 +12,20 @@ function [C] = leastSquare(x,y,m)
 %                      order (high - low): ^m, ^(m-1), ^(m-2), ... , ^(1), ^(0)
 %
 
+    %% Sanity check of  the dataset
+    szx = size(x); % number of x entries of the dataset
+    szy = size(y); % number of y entries ot the dataset
+    if szx(1) ~= szy(1)
+        disp("invalid set of datapoints");
+        return
+    end
+    
+    %% Initialisation
     n = length(y);
     %A = size(n,n+1)
+    
+    %% Computation
     % create Vandermonde matrix A
-
     for j = 1:n
         for k = 1:m
             A(j,k) = x(j).^(k);

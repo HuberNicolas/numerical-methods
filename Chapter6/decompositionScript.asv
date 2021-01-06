@@ -1,0 +1,58 @@
+%% Author
+%{
+    Nicolas Huber
+    16-936-205
+    BA Information Systems @ UZH, Switzerland
+%}
+%% About
+%{
+    
+%}
+
+%% Clearing Workspace
+clc; clear all; close all;
+
+%% Cholesky
+% Initialisation
+A = [1 -1 0; -1 5 0; 0 0 7];
+
+% Computation
+R = choleskyFactorisation(A);
+C = R'*R;
+R2 = chol(A); % check with Matlab
+
+%% Thomas
+clc; clear all; close all;
+n = 5;
+D = 2.04 .* ones(n,1); % main diag
+D1 = (-1).* ones(n-1,1); % sub diag
+A = diag(D)+diag(D1,-1)+diag(D1,+1);
+
+y = [20.8; 0.8; 0.8; 0.8; 100.8];
+[L,U] = thomasFactorisation(A)
+L*U
+% Ax = y
+% LUx = y
+b = L\y
+x = U\b
+
+n = 5;
+
+la = diag(A)
+le = diag(A,-1)
+le = [0,le]
+lc = diag(A,1)
+
+lalpha = zeros(n,1)
+lbeta = zeros(n,1)
+lalpha(1) = la(1)
+
+for i=2:n
+    lbeta(i) = le(i) / lalpha(i-1);
+    lalpha(i) = la(i) - lbeta(i) * lc(i-1)
+end
+
+
+
+%% Plotting
+

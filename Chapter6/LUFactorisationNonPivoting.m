@@ -1,5 +1,5 @@
 function [L,U] = LUFactorisationNonPivoting(A)
-%   Computes LU-Factorisation of A
+%   Computes LU-Factorisation of A (A = LU)
 %   (without pivoting)
 %   
 %   Input:
