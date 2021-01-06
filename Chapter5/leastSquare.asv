@@ -1,0 +1,36 @@
+function [S] = leastSquare(x,y,m)
+%   Description:
+%   
+%   Input:
+%           x        : parameter a
+%           y        : parameter b
+%           m        : degree m
+%
+%   Output:
+%           x        : output x
+%           y        : output y
+%           z        : output z
+%
+
+    n = length(y)
+    %X = size(n,n+1)
+    X = []
+    m = m
+    for j = 1:n
+        for k = 1:m
+            X(j,k) = x(j).^(k);
+        end
+    end
+    
+    X = [ones(n,1),X] % add first col of 1's
+    
+    c = 
+    c = (X'*X)^(-1) * X' * y
+    c = polyfit(x,y,3);
+p = polyval(c,x)
+plot(x,p)
+   
+
+end  
+
+    
