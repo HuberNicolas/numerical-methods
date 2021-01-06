@@ -6,13 +6,17 @@
 %}
 %% About
 %{
-    
+    Skript to investigate different Decompositions
+    - Choleski (Fast
+    - Thomas (Fast LU for tridiagonal 
+    Thomas Algorithm Mistake on Slide 11 (not ei/ai-1 but ei/alphai-1);
+    correct Version on Slide 8 one week later
 %}
 
 %% Clearing Workspace
 clc; clear all; close all;
 
-%% Cholesky
+%% Cholesky-Decomposition
 % Initialisation
 A = [1 -1 0; -1 5 0; 0 0 7];
 
@@ -21,38 +25,20 @@ R = choleskyFactorisation(A);
 C = R'*R;
 R2 = chol(A); % check with Matlab
 
-%% Thomas
+%% Thomas-Decomposition (Efficient LU for Tridiagonal Matrices)
 clc; clear all; close all;
 n = 5;
+% Initialisation
 D = 2.04 .* ones(n,1); % main diag
 D1 = (-1).* ones(n-1,1); % sub diag
 A = diag(D)+diag(D1,-1)+diag(D1,+1);
-
 y = [20.8; 0.8; 0.8; 0.8; 100.8];
+% Computation
 [L,U] = thomasFactorisation(A)
-L*U
+B = L*U % check if Algorithm was sucessfull
 % Ax = y
 % LUx = y
 b = L\y
 x = U\b
 
-n = 5;
-
-la = diag(A)
-le = diag(A,-1)
-le = [0,le]
-lc = diag(A,1)
-
-lalpha = zeros(n,1)
-lbeta = zeros(n,1)
-lalpha(1) = la(1)
-
-for i=2:n
-    lbeta(i) = le(i) / lalpha(i-1);
-    lalpha(i) = la(i) - lbeta(i) * lc(i-1)
-end
-
-
-
-%% Plotting
 

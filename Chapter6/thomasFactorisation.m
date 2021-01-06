@@ -5,7 +5,8 @@ function [L,U] = thomasFactorisation(A)
 %           A        : tridiagonal matrix A
 %
 %   Output:
-%           A        : upper triangular matrix R of the Cholesky-Decomposition of A
+%           L        : lower triangular matrix L of the Thomas-Decomposition of A
+%           U        : upper triangular matrix U of the Thomas-Decomposition of A
 %
     
     %% Check if L is a square matrix
@@ -25,17 +26,17 @@ function [L,U] = thomasFactorisation(A)
 
     %% Computation
     for j = 2:n
-        beta(j) = Ei(j)./alpha(j-1) % NOT aj-1!
-        alpha(j) = Ai(j) - beta(j).*Ci(j-1)
+        beta(j) = Ei(j)./alpha(j-1); % NOT aj-1!
+        alpha(j) = Ai(j) - beta(j).*Ci(j-1);
     end
     
     % generate L
-    L = diag(ones(n,1))
-    L = L + diag(beta(2:end),-1) % first entry is a zero, we start with beta_2
+    L = diag(ones(n,1));
+    L = L + diag(beta(2:end),-1); % first entry is a zero, we start with beta_2
     
     % generate U
-    U = diag(alpha)
-    U = U + diag(Ci,1)
+    U = diag(alpha);
+    U = U + diag(Ci,1);
 end  
 
     
