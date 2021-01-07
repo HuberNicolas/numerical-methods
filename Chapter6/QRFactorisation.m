@@ -6,7 +6,7 @@ function [Q,R] = QRFactorisation(A)
 %           A        : square matrix A
 %
 %   Output:
-%           Q        : orthonormal matrix Q of the QR-Decomposition of A
+%           Q        : orto matrix Q of the QR-Decomposition of A
 %           R        : upper triangular matrix R of the QR-Decomposition of A
 %
     

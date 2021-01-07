@@ -53,7 +53,7 @@ A = [1 -1 0; -1 5 0; 0 0 7];
 A1 = Q*R;
 [Q1,R1] = qr(A); %check if Algorithm was sucessfull
 % QR with modified Gram-Schmidt
-C = [1,5;2,7;3,-8];
+C = [1,5;2,7;3,-8]; % C is not square
 [Q,R] = QRFactorisationEconomic(C) % untested
 Q*R
 

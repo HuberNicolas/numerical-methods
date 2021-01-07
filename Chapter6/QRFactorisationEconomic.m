@@ -13,11 +13,11 @@ function [Q,R] = QRFactorisationEconomic(A)
 
     %% Initialise
     [m,n] = size(A);
-    rank = min(m,n)
+    rank = min(m,n);
     Q = zeros(m,n);
     R = zeros(n);
-    Q(1:m,1) = A(1:m,1)
-    R(1,1) = 1
+    Q(1:m,1) = A(1:m,1);
+    R(1,1) = 1;
     %% Iterate
         for k=1:n % iterate over all columns of A
             R(k,k) = norm(A(1:m,k));
