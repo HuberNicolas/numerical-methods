@@ -1,0 +1,25 @@
+%% Author
+%{
+    Nicolas Huber
+    16-936-205
+    BA Information Systems @ UZH, Switzerland
+%}
+%% About
+%{
+    
+%}
+
+%% Clearing Workspace
+clc; clear all; close all;
+
+%% Initialisation
+
+f = @(x) sin(3*x-x^2)*exp(-x.^2)
+a = 0.75
+b = 1.25
+I = integral(f,a,b)
+
+%% Computation
+
+%% Plotting
+

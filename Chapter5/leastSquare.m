@@ -47,6 +47,4 @@ function [C] = leastSquare(x,y,m)
     % plot
     p = polyval(c1,x);
     plot(x,p);
-end  
-
-    
+end 

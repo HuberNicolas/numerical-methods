@@ -118,3 +118,16 @@ D = 2.04 .* ones(n,1); % main diag
 D1 = (-1).* ones(n-1,1); % sub diag
 A = diag(D)+diag(D1,-1)+diag(D1,+1);
 
+
+Plot 2 Graphs
+hold on
+plot(h,y1,'rx-');
+plot(h,y2,'b*--');
+hold off
+title('Erros of two algebraic identical functions', 'Interpreter', 'latex');
+xlabel('$x, 10^{-16}<=x<=10^{-1}$', 'Interpreter', 'latex');
+ylabel('y = f(x)');
+legend('f1 using cosine','f2 using sine');
+axis([-0.02 0.12 0 0.60])
+
+

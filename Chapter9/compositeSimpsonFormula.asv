@@ -1,0 +1,25 @@
+function [I] = compositeSimpsonFormula(fun,a,b,m)
+%   Composite method of the simpson integration formula
+%   
+%   Input:
+%           fun      : to be integrated function
+%           a        : 
+%           b        : parameter c
+%
+%   Output:
+%           x        : output x
+%           y        : output y
+%           z        : output z
+%
+    h = (b-a)/m; % stepwidth
+    xk = linspace(a,b,m+1); % generate m intervals between a and b with width = h
+    sum = 0;
+    for j = 1:length(xk)-1
+        xm = (xk(j)+xk(j+1))./2; % midpoint of interval j
+        sum = sum + fun(xk(j)) + 4*fun(xm) + fun(xk(j+1));
+    end
+    I = (h/6)* sum;
+   
+end  
+
+    
