@@ -13,11 +13,13 @@
 clc; clear all; close all;
 
 %% Initialisation
-
-f = @(x) sin(3*x-x^2)*exp(-x.^2)
-a = 0.75
-b = 1.25
-I = integral(f,a,b)
+maxIt = 500;
+eps = 10e-8;
+x0 = [1;1;1];
+aas = linspace(-2,2,500);
+for j = 1:500
+    A = [aas(j),1,1;1,3,-1;1,-1,2]
+end
 
 %% Computation
 
