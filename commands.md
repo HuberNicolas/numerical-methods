@@ -1,7 +1,7 @@
 #Useful Matlab Commands
 
 ##Funktion definieren
-f = @(x) x^2;
+f = @(x) x^2;\
 f(5) % ans = 25
 
 ##Funktion in mehreren Positionen auswerten
